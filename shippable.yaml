@@ -6,4 +6,7 @@ php:
 build:
   ci:
     - echo "hello!"
+    - docker --version
+    - docker info
+    - docker ps
     
