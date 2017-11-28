@@ -6,25 +6,22 @@ php:
   - 5.6
   - "7.0"
   
-build_image: drydock/u14phpall:tip
-  
-before_script: 
-  - mkdir -p shippable/codecoverage
-  - mkdir -p shippable/testresults
-
-script:
-   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
-
-after_success:
-  - echo "success"
-  
-after_failure:
-  - echo :failure"
-  
-notifications:
-  email: 
-    test_ci2@yahoo.in
-  irc:
-    channels: "chat.freenode.net#test-irc"
+env:
+  global:
+    - eg1: test
+  matrix:
+    - em1: m1
+      em2: m2
+    - em1=m4 em1=m4
     
-archive: true
+matrix:
+  exclude:
+    - php: 5.6
+      env: em1=m1 em2=m2
+  include:
+    - php: 5.6
+      env: em1=m1 em2=m2
+      
+build:
+  ci:
+    - echo "hello"
