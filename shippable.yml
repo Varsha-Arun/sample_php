@@ -12,7 +12,7 @@ env:
   matrix:
     - em1: m1
       em2: m2
-    - em1=m4 em1=m4
+    - em1=m3 em1=m4
     
 matrix:
   exclude:
