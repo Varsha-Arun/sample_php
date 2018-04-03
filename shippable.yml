@@ -3,10 +3,10 @@ language: php
 #php: 
  # - 5.4
   
-env:
-  matrix:
-    - foo=bar
-    - foo1=bar1
+#env:
+  #matrix:
+    #- foo=bar
+    #- foo1=bar1
 
 build:
   #cache: true
